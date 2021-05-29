@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <ul id="app">
+        <li class="hobby-card" v-for="hobby in hobbies" :key="hobby.name">
+          {{ hobby.name }}
+        </li>
+    </ul>
+    <style>
+    .hobby-card {
+        width: 50%;
+        padding: 1rem;
+        margin: 1rem auto;
+        color: #ffffff;
+        background: #40b983;
+        box-shadow: 2px 2px 4px #ddd;
+        font-weight: bold;
+    }
+    .hobby-card:hover {
+        opacity: .8;
+    }
+    </style>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                hobbies: [
+                    {name: 'Study'},
+                    {name: 'Game'},
+                    {name: 'Sleep'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
