@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app" class="text-card">
+        <div v-if="random == 'fun'">
+            <p>NinjaCodeはすごく楽しい!</p>
+            <p>楽しく学べるプログラミング</p>
+        </div>
+        <div v-else-if="random == 'lazy'">
+            <p>NinjaCODEは退屈だ</p>
+            <p>非常に退屈だ...</p>
+        </div>
+        <div v-else="">
+            <p>NinjaCODE 難しい</p>
+            <p>難しいなあ</p>
+        </div>
+    </div>
+    <style>
+    .text-card {
+        width: 50%;
+        margin: 30% auto;
+        padding: 2rem;
+        background: #40b983;
+        color: #ffffff;
+    }
+    .text-card p:nth-child(1) {
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    </style>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                random: 'fun',
+            }
+        })
+    </script>
+</body>
+</html>
