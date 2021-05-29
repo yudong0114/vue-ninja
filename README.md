@@ -5,6 +5,6 @@
 # 進捗
 * Q1
 * Q2  
-  https://jp.vuejs.org/v2/guide/reactivity.html
 * Q3  
-  https://jp.vuejs.org/v2/guide/class-and-style.html
+* Q4  
+* Q5  
