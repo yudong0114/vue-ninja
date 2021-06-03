@@ -8,38 +8,34 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app" class="text-card">
-        <div v-if="random == 'fun'">
-            <p>NinjaCodeはすごく楽しい!</p>
-            <p>楽しく学べるプログラミング</p>
-        </div>
-        <div v-else-if="random == 'lazy'">
-            <p>NinjaCODEは退屈だ</p>
-            <p>非常に退屈だ...</p>
-        </div>
-        <div v-else="">
-            <p>NinjaCODE 難しい</p>
-            <p>難しいなあ</p>
-        </div>
-    </div>
+    <ul id="app">
+        <li class="hobby-card" v-for="hobby in hobbies" :key="hobby.name">
+          {{ hobby.name }}
+        </li>
+    </ul>
     <style>
-    .text-card {
+    .hobby-card {
         width: 50%;
-        margin: 30% auto;
-        padding: 2rem;
-        background: #40b983;
+        padding: 1rem;
+        margin: 1rem auto;
         color: #ffffff;
-    }
-    .text-card p:nth-child(1) {
+        background: #40b983;
+        box-shadow: 2px 2px 4px #ddd;
         font-weight: bold;
-        font-size: 2rem;
+    }
+    .hobby-card:hover {
+        opacity: .8;
     }
     </style>
     <script>
         const app = new Vue({
             el: '#app',
             data: {
-                random: 'fun',
+                hobbies: [
+                    {name: 'Study'},
+                    {name: 'Game'},
+                    {name: 'Sleep'}
+                ]
             }
         })
     </script>

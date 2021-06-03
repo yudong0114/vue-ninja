@@ -8,34 +8,30 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
-    <ul id="app">
-        <li class="hobby-card" v-for="hobby in hobbies" :key="hobby.name">
-          {{ hobby.name }}
-        </li>
-    </ul>
+    <div id="app">
+        <p>{{ greet }}</p>
+        <button v-on:click="alertText" class="alert_btn">Alert!</button>
+    </div>
     <style>
-    .hobby-card {
-        width: 50%;
+    .alert_btn {
+        width: 30%;
         padding: 1rem;
         margin: 1rem auto;
         color: #ffffff;
         background: #40b983;
-        box-shadow: 2px 2px 4px #ddd;
         font-weight: bold;
-    }
-    .hobby-card:hover {
-        opacity: .8;
     }
     </style>
     <script>
         const app = new Vue({
             el: '#app',
             data: {
-                hobbies: [
-                    {name: 'Study'},
-                    {name: 'Game'},
-                    {name: 'Sleep'}
-                ]
+                greet: 'v-on学習！',
+            },
+            methods: {
+                alertText: function () {
+                    alert('アラートの表示')
+                }
             }
         })
     </script>

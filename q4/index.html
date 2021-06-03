@@ -9,26 +9,33 @@
 </head>
 <body>
     <div id="app">
-        <div v-bind:class="{active: isActive}">
-            Active!!
+        <div v-if="show">
+            <p class="text text-success">NinjaCODE 楽しい!!</p>
+        </div>
+        <div v-else="">
+            <p class="text text-danger">NinjaCODE 難しい....</p>
         </div>
     </div>
     <style>
-    .active {
-        width: 30%;
+    .text {
         margin: 30% auto;
-        padding: 1rem;
-        background:#40B983;
-        color: #ffffff;
+        font-size: 2rem;
         text-align: center;
-        box-shadow: 6px 6px #ddd;
+        border-bottom:2px solid #35495E;
+        width: 50%;
+    }
+    .text-success {
+        color: #40b983;
+    }
+    .text-danger {
+        color: #F1936E;
     }
     </style>
     <script>
         const app = new Vue({
             el: '#app',
             data: {
-                isActive: true,
+                show: false,
             }
         })
     </script>
