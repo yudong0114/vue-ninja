@@ -10,27 +10,17 @@
 <body>
     <div id="app">
         <p>{{ greet }}</p>
-        <button @click="alertText" class="alert_btn">Alert!</button>
+        <button v-on:click="reverseText">文字が反対になるよ!</button>
     </div>
-    <style>
-    .alert_btn {
-        width: 30%;
-        padding: 1rem;
-        margin: 1rem auto;
-        color: #ffffff;
-        background: #40b983;
-        font-weight: bold;
-    }
-    </style>
     <script>
         const app = new Vue({
             el: '#app',
             data: {
-                greet: 'v-on学習！',
+                greet: 'Hello!NinjaCode!',
             },
             methods: {
-                alertText: function () {
-                    alert('アラートの表示')
+                reverseText: function () {
+                    this.greet = this.greet.split('').reverse().join('')
                 }
             }
         })
