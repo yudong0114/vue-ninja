@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1M</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ count }}</p>
+        <button class="up" v-on:click="countUp">
+            プラス
+        </button>
+        <button class="down" v-on:click="countDown">
+            マイナス
+        </button>
+    </div>
+    <style>
+        p {
+            font-size:30px;
+            font-weight: bold;
+        }
+        button {
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        button.up {
+            background: #40b983;
+            border: none;
+        }
+        button.down {
+            background: red;
+            border: none;
+        }
+    </style>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                count: 0,
+            },
+            methods: {
+                countUp: function () {
+                    this.count++
+                },
+                countDown: function () {
+                    this.count--
+                }
+            }
+        })
+    </script>
+</body>
+</html>
