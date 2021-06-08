@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4M</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <ul>
+                <li v-for="job in jobs" :key="job.key">
+                {{ job.name }}
+                </li>
+            </ul>
+        </div>
+        <form v-on:submit.prevent="addJob">
+            <input type="text" v-model="newJobName">
+            <input type="submit" value="タスクを完了する">
+        </form>
+    </div>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                newJobName: '',
+                jobs: [
+                    {name: 'Job1'}, 
+                    {name: 'Job2'}
+                ]
+            },
+            methods: {
+                addJob: function () {
+                    this.jobs.push({name: this.newJobName})
+                    this.newJobName = ''
+                }
+            }
+        })
+    </script>
+</body>
+</html>
