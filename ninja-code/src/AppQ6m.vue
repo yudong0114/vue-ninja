@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <ninjacode text="Hello NinjaCode!">
-  </ninjacode></div>
+    <ninjacode></ninjacode>
+  </div>
 </template>
 
 <script>
