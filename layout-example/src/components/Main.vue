@@ -1,8 +1,17 @@
 <template>
   <div class="main-container">
-    <h1>Main.vue</h1>
+    <list></list>
   </div>
 </template>
+<script>
+import list from './List.vue'
+export default {
+    name: 'Main',
+    components: {
+        list
+    }
+}
+</script>
 <style>
   .main-container {
     width: 80%;
