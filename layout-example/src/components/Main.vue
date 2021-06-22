@@ -1,15 +1,19 @@
 <template>
   <div class="main-container">
-    <list></list>
+    <router-view>
+      <list></list>
+      <sample></sample>
+    </router-view>
   </div>
 </template>
 <script>
-import list from './List.vue'
+import List from './List'
+import Sample from './Sample'
 export default {
-    name: 'Main',
-    components: {
-        list
-    }
+  components: {
+    List,
+    Sample
+  }
 }
 </script>
 <style>

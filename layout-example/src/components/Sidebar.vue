@@ -1,7 +1,15 @@
 <template>
-  <div class="sidebar-container">
-    <h1>Sidebar.vue</h1>
-    <navlist></navlist>
+  <div>
+    <nav class="nav-list-wrapper">
+      <ul class="nav-list">
+        <li class="nav-list-item">
+          <router-link to="/">Home</router-link>
+        </li>
+        <li class="nav-list-item">
+          <router-link to="/sample">Sample</router-link>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 <script>
